@@ -14,11 +14,53 @@
         <link rel="stylesheet" href="/css/academicons.min.css" />
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono" />
         <link rel="stylesheet" href="/css/hugo-academic.css" />
+        <link rel="stylesheet" href="/css/styles.css">
         <link rel="alternate" href="https://tpbull.github.io/index.xml" type="application/rss+xml" title="Bowen Li's Website" />
         <link rel="feed" href="https://tpbull.github.io/index.xml" type="application/rss+xml" title="Bowen Li's Website" />
         <link rel="icon" type="image/svg" href="/img/headers/RI.png" />
         <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png" />
         <link rel="canonical" href="https://tpbull.github.io/" />
+        <style> 
+            .spotlight-container {
+                position: relative;
+                display: inline-block;
+            }
+        
+            .spotlight-text {
+                position: relative;
+                font-size: 1rem; /* Large font size */
+                color: #FFD709; /* Gold color for the "Spotlight" text */
+                z-index: 2;
+            }
+        
+            .stars {
+                position: absolute;
+                border-radius: 50%;
+                background: white;
+                animation: shine 1.5s infinite;
+                opacity: 0;
+            }
+        
+            /* Different sizes for the stars */
+            .stars:nth-child(1) { top: 10px; left: 10px; width: 10px; height: 10px; animation-delay: 0s; }
+            .stars:nth-child(2) { top: 40px; right: 30px; width: 5px; height: 5px; animation-delay: 0.5s; }
+            .stars:nth-child(3) { top: 20px; right: 10px; width: 7px; height: 7px; animation-delay: 1s; }
+            .stars:nth-child(4) { bottom: 30px; left: 20px; width: 6px; height: 6px; animation-delay: 0.7s; }
+            .stars:nth-child(5) { bottom: 10px; right: 40px; width: 8px; height: 8px; animation-delay: 1.2s; }
+        
+            @keyframes shine {
+                0% {
+                    opacity: 0;
+                    transform: scale(0);
+                    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700, 0 0 60px #FFD700, 0 0 70px #FFD700;
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                    box-shadow: none;
+                }
+            }
+        </style>
         <title>Bowen Li's Website</title>
         <script>var _hmt = _hmt || []; (function() {
                 var hm = document.createElement("script");
@@ -222,7 +264,10 @@
                         <hr style="filter:alpha(opacity=100,finishopacity=0,style=2);background-color:##67c077;height:8px" />
                 <div class="row">
                     <div class="col-md-4">
-                        <img class="img-fluid img-rounded" src="/img/headers/voxdet.mp4" style="border:1px solid black" alt="">
+                        <video id="teaser" autoplay muted loop height="100%">
+                            <source src="/img/headers/voxdet.mp4"
+                                    type="video/mp4">
+                            </video>
                     </div>
                     <div class="col-md-8">
                     <b><font color="black">VoxDet: Voxel Learning for Novel Instance Detection</font></b><br>
@@ -232,18 +277,15 @@
                     <a href="https://scholar.google.com/citations?user=vZfmKl4AAAAJ&hl=en&oi=ao" target="_blank">Chen Wang</a>,
                     <a href="https://scholar.google.com/citations?user=gxoPfIYAAAAJ&hl=en&oi=ao" target="_blank">Sebastian Scherer*</a>,
                     <br>
-                        <head>
-                        <meta charset="UTF-8">
-                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>NeurIPS Spotlight</title>
-                        <link rel="stylesheet" href="styles.css">
-                        </head>
-                        <body>
-                            <div class="spotlight-text">
-                                NeurIPS 2023 SpotLight
-                            </div>
-                        </body>
+                    NeurIPS
+                    <div class="spotlight-container">
+                        <div class="stars"></div>
+                        <div class="stars"></div>
+                        <div class="stars"></div>
+                        <div class="stars"></div>
+                        <div class="stars"></div>
+                        <span class="spotlight-text">Spotlight</span>
+                    </div>
                     <a href="https://arxiv.org/pdf/2305.17220.pdf" target="_blank"> <small>[Paper]</small></a>
                     <a href="https://jaraxxus-me.github.io/NeurIPS2023_VoxDet/" target="_blank"> <small>[Project]</small></a>
                     <a href="https://github.com/Jaraxxus-Me/VoxDet" target="_blank"> <small>[Code, Data]</small></a> <br> </b>

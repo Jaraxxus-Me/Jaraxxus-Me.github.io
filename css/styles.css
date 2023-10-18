@@ -2,32 +2,49 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: #333; /* Dark background to make spotlight effect more prominent */
+    height: 100vh;
+    background-color: #111; /* Dark background for contrast */
     margin: 0;
-    color: white;
+    padding: 0;
     font-family: 'Arial', sans-serif;
 }
 
-.spotlight-text {
-    font-size: 4rem; /* Large font size for the spotlight text */
-    background-color: #ff0; /* Bright color for the "light" */
-    color: #333; /* Dark text color for contrast */
-    padding: 10px 20px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 0 10px #ff0, 0 0 40px #ff0, 0 0 80px #ff0; /* Glowing effect */
-    text-shadow: 0 0 2px #ffe; /* Text glowing effect */
-    animation: flicker 1.5s infinite alternate; /* Animation to create the flickering effect */
+.spotlight-container {
+    position: relative;
+    display: inline-block;
 }
 
-/* Keyframes for the flickering effect */
-@keyframes flicker {
-    from {
-        box-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 15px #ff0;
-        text-shadow: 0 0 1px #ffe;
+.spotlight-text {
+    position: relative;
+    font-size: 4rem; /* Large font size */
+    color: #FFD700; /* Gold color for the "Spotlight" text */
+    z-index: 2;
+}
+
+.stars {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    animation: shine 1.5s infinite;
+    opacity: 0;
+}
+
+/* Different sizes for the stars */
+.stars:nth-child(1) { top: 10px; left: 10px; width: 10px; height: 10px; animation-delay: 0s; }
+.stars:nth-child(2) { top: 40px; right: 30px; width: 5px; height: 5px; animation-delay: 0.5s; }
+.stars:nth-child(3) { top: 20px; right: 10px; width: 7px; height: 7px; animation-delay: 1s; }
+.stars:nth-child(4) { bottom: 30px; left: 20px; width: 6px; height: 6px; animation-delay: 0.7s; }
+.stars:nth-child(5) { bottom: 10px; right: 40px; width: 8px; height: 8px; animation-delay: 1.2s; }
+
+@keyframes shine {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700, 0 0 60px #FFD700, 0 0 70px #FFD700;
     }
-    to {
-        box-shadow: 0 0 15px #ff0, 0 0 30px #ff0, 0 0 45px #ff0;
-        text-shadow: 0 0 3px #ffe;
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: none;
     }
 }
