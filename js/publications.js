@@ -7,7 +7,7 @@
   var filters = section.querySelectorAll('.publication-filter');
   var publications = section.querySelectorAll('.publication-item');
   var list = document.getElementById('publication-list');
-  var programOrder = ['agenticgentamp', 'flax', 'kinder'];
+  var programOrder = ['bot', 'agenticgentamp', 'flax', 'kinder'];
   var status = document.getElementById('publication-status');
 
   filters.forEach(function (filter) {
